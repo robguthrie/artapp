@@ -1,0 +1,19 @@
+- title "Artists"
+
+%table
+  %tr
+    %th Name
+    %th Description
+    %th Phone
+    %th Email
+  - for artist in @artists
+    %tr
+      %td= artist.name
+      %td= artist.description
+      %td= artist.phone
+      %td= artist.email
+      %td= link_to 'Show', artist
+      %td= link_to 'Edit', edit_artist_path(artist)
+      %td= link_to 'Destroy', artist, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Artist", new_artist_path

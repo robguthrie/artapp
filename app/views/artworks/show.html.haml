@@ -1,0 +1,15 @@
+- title "Artwork"
+
+%p
+  %strong Name:
+  = @artwork.name
+%p
+  %strong Description:
+  = @artwork.description
+
+%p
+  = link_to "Edit", edit_artwork_path(@artwork)
+  |
+  = link_to "Destroy", @artwork, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", artworks_path
