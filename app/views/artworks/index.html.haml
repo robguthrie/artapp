@@ -2,13 +2,14 @@
 
 %table
   %tr
-    %th Name
+    %th Artist Name
+    %th Artwork Name
     %th Description
   - for artwork in @artworks
     %tr
+      %td= artwork.artist.name
       %td= artwork.name
       %td= artwork.description
       %td= link_to 'Show', artwork
-      %td= link_to 'Edit', edit_artwork_path(artwork)
-      %td= link_to 'Destroy', artwork, :confirm => 'Are you sure?', :method => :delete
+
 

@@ -1,9 +1,11 @@
 = semantic_form_for [@artist, @artwork] do |f|
   =f.inputs do 
-    =f.input :name
-    =f.input :description
-    =f.input :image, :as => :file
+    =f.input :name, :hint => "The name of the artwork"
+    =f.input :description, :hint => "Any additional info about the artwork for the viewer"
+    =f.input :image, :as => :file, :hint => "An image of the artwork"
     =f.input :retained_image, :as => :hidden
-    =f.input :downloadable
-    =f.input :physical_being_delivered
+    =f.input :downloadable, :hint => "Would you like to offer a high quality digital download of the work, for a donation?"
+    =f.input :physical_being_delivered, :hint => "Are you delivering a physical copy to be displayed in the exhibition?"
+    =f.input :auction_physical, :hint => "If you are delivering a physical copy, would you like to include it in our online auction?"
+    =f.input :auction_reserve_price, :hint => "If you are auctioning a physical copy, please enter a reserve price that will cover your expenses"
     =f.buttons

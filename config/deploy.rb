@@ -1,3 +1,4 @@
+require "bundler/capistrano"
 set :application, "artapp"
 set :repository,  "git@github.com:robguthrie/artapp.git"
 

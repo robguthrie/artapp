@@ -16,8 +16,11 @@
   %strong Physical being delivered
   = @artwork.physical_being_delivered.inspect
 %p
-  %strong Physical being delivered to
-  = @artwork.delivering_to
+  %strong Physical included in auction?
+  = @artwork.auction_physical.inspect
+%p
+  %strong Auction reserve price
+  = @artwork.auction_reserve_price
 
 %p
   = link_to "Edit", edit_artwork_path(@artwork)
