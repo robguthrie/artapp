@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110807052557) do
+ActiveRecord::Schema.define(:version => 20110807071134) do
 
   create_table "artists", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(:version => 20110807052557) do
     t.datetime "updated_at"
     t.boolean  "auction_physical"
     t.float    "auction_reserve_price"
+    t.text     "dimensions"
   end
 
 end
