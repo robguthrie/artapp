@@ -8,7 +8,7 @@
   = @artwork.description
 %p
   %strong Image:
-  = @artwork.image.thumb('400x400#').url if @artwork.image
+  = image_tag @artwork.image.thumb('400x400#').url if @artwork.image
 %p
   %strong Downloadable
   = @artwork.downloadable.inspect
