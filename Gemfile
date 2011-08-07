@@ -40,3 +40,6 @@ group :development, :test do
 end
 
 gem "mocha", :group => :test
+group :production do
+  gem 'therubyracer'
+end
