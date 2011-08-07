@@ -1,16 +1,14 @@
 - title "Artists"
-
+%p Unregonised Exhibition on August 19th at Garret Street. Please register by clicking "New Artist" below.
 %table
   %tr
     %th Name
     %th Description
-    %th Phone
-    %th Email
+    %th Link
   - for artist in @artists
     %tr
       %td= artist.name
-      %td= artist.description
+      %td= truncate(artist.description)
       %td= link_to 'Show', artist
-      %td= link_to 'Edit', edit_artist_path(artist)
 
 %p= link_to "New Artist", new_artist_path
