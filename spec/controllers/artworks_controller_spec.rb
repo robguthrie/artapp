@@ -1,7 +1,6 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
 describe ArtworksController do
-  fixtures :all
   render_views
 
   it "index action should render index template" do
@@ -10,35 +9,27 @@ describe ArtworksController do
   end
 
   it "show action should render show template" do
-    get :show, :id => Artwork.first
+    artist = Artist.make!
+    artwork = Artwork.make!(:artist => artist)
+    get :show, :artist_id => artist.id, :id => artwork.id
     response.should render_template(:show)
   end
 
   it "new action should render new template" do
-    get :new
-    response.should render_template(:new)
-  end
-
-  it "create action should render new template when model is invalid" do
-    Artwork.any_instance.stubs(:valid?).returns(false)
-    post :create
+    artist = Artist.make!
+    get :new, :artist_id => artist.id
     response.should render_template(:new)
   end
 
   it "create action should redirect when model is valid" do
-    Artwork.any_instance.stubs(:valid?).returns(true)
-    post :create
-    response.should redirect_to(artwork_url(assigns[:artwork]))
+    artist = Artist.make!
+    artwork = Artwork.make
+    post :create, :artist_id => artist.id, :artwork => artwork.attributes
+    response.should be_redirect
   end
 
   it "edit action should render edit template" do
     get :edit, :id => Artwork.first
-    response.should render_template(:edit)
-  end
-
-  it "update action should render edit template when model is invalid" do
-    Artwork.any_instance.stubs(:valid?).returns(false)
-    put :update, :id => Artwork.first
     response.should render_template(:edit)
   end
 

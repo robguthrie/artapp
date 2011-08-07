@@ -1,10 +1,5 @@
 Artapp::Application.routes.draw do
-  resources :artists
-
-  resources :artworks
-
-  devise_for :artists
-
+  resources :artworks, :except => [:new, :create] 
   resources :artists do
     resources :artworks
   end

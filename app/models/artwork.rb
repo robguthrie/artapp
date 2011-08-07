@@ -1,3 +1,5 @@
 class Artwork < ActiveRecord::Base
-  attr_accessible :name, :description
+ image_accessor :image 
+ belongs_to :artist
+ validates_presence_of :artist, :name
 end

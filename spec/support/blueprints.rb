@@ -1,5 +1,20 @@
 require 'machinist/active_record'
 
+Artist.blueprint do
+  name { Faker::Name.name }
+  email { Faker::Internet.email }
+  phone { Faker::PhoneNumber.phone_number}
+  description { Faker::Lorem.paragraphs }
+end
+
+Artwork.blueprint do
+  artist
+  name { Faker::Name.name }
+  description { Faker::Lorem.paragraphs }
+  downloadable { true }
+  physical_being_delivered { true }
+  delivering_to { "Wellington" }
+end
 # Add your blueprints here.
 #
 # e.g.

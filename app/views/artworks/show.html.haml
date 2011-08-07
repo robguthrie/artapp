@@ -6,6 +6,18 @@
 %p
   %strong Description:
   = @artwork.description
+%p
+  %strong Image:
+  = @artwork.image.thumb('400x400#').url if @artwork.image
+%p
+  %strong Downloadable
+  = @artwork.downloadable.inspect
+%p
+  %strong Physical being delivered
+  = @artwork.physical_being_delivered.inspect
+%p
+  %strong Physical being delivered to
+  = @artwork.delivering_to
 
 %p
   = link_to "Edit", edit_artwork_path(@artwork)
