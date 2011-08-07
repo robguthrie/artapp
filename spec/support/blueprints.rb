@@ -5,6 +5,8 @@ Artist.blueprint do
   email { Faker::Internet.email }
   phone { Faker::PhoneNumber.phone_number}
   description { Faker::Lorem.paragraphs }
+  password { 'password'}
+  password_confirmation { 'password'}
 end
 
 Artwork.blueprint do

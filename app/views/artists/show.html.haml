@@ -1,6 +1,6 @@
 - title 'Artist: '+@artist.name
 %p
-  = link_to "Edit", edit_artist_path(@artist)
+  = link_to "Edit", edit_artist_registration_path(@artist)
 %p
   %strong Name:
   = @artist.name
@@ -18,5 +18,5 @@
   %strong Artworks:
   %ul
     - @artist.artworks.each do |a|
-      %li=link_to(a.name, [@artist, a])
-    %li= link_to "Add artwork", new_artist_artwork_path(@artist)
+      %li=link_to(a.name, a)
+%p= link_to "Add artwork", new_artwork_path

@@ -12,6 +12,12 @@
 
   %body
     #container
+      #user_links{:style => 'float: right'}
+        - if artist_signed_in?
+          =link_to("Sign out", destroy_artist_session_path, :method => :delete)
+        - else
+          =link_to("Sign up", new_artist_registration_path)
+          =link_to("Sign in", new_artist_session_path)
       - flash.each do |name, msg|
         = content_tag :div, msg, :id => "flash_#{name}"
 

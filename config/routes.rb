@@ -1,7 +1,6 @@
 Artapp::Application.routes.draw do
-  resources :artworks, :except => [:new, :create] 
-  resources :artists do
-    resources :artworks
-  end
-  root :to => 'artists#index'
+  devise_for :artists, :controllers => {:registrations => 'artists/registrations'}
+  resources :artworks
+  resource :artist, :only => [:show]
+  root :to => 'home#index'
 end

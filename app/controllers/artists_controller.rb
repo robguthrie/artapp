@@ -1,5 +1,7 @@
 class ArtistsController < ApplicationController
-  def create
-    create!{new_artist_artwork_path(@artist)}
+  before_filter :authenticate_artist! 
+  def show
+    @artist = current_artist
   end
+
 end
