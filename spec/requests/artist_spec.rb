@@ -18,8 +18,8 @@ describe "artists" do
     fill_in 'Name', :with => artwork.name
     fill_in 'Description', :with => artwork.description
     attach_file('Image', Rails.root.join('spec','requests', 'image.jpg'))
-    check 'Downloadable'
-    check 'Physical being delivered'
+    check 'Allow downloads for a donation?'
+    check 'Include the physical copy in the online auction?'
     #select 'Wellington - Garrett St', :from => 'Delivering to'
     click_on 'Create Artwork'
     page.should have_content('Artwork was successfully created.')
