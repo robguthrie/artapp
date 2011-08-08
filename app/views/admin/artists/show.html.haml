@@ -1,0 +1,21 @@
+- title 'Artist: '+@artist.name
+%p
+  = link_to "Edit", edit_admin_artist_path(@artist)
+%p
+  %strong Name:
+  = @artist.name
+%p
+  %strong Description:
+  = @artist.description
+%p
+  %strong Phone:
+  = @artist.phone
+%p
+  %strong Email:
+  = @artist.email
+
+%p
+  %strong Artworks:
+  %ul
+    - @artist.artworks.each do |a|
+      %li=link_to(a.name, admin_artwork_path(a))

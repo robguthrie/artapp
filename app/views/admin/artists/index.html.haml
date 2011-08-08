@@ -1,0 +1,12 @@
+- title "Artists"
+%table
+  %tr
+    %th Name
+    %th Description
+    %th Link
+  - for artist in @artists
+    %tr
+      %td= artist.name
+      %td= truncate(artist.description)
+      %td= link_to 'Show', admin_artist_path(artist)
+
