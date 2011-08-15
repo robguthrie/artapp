@@ -5,7 +5,7 @@
 
 -@artists.each do |artist|
   %h2=artist.name
-  %p=simple_format artist.description
+  %p=simple_format auto_link artist.description
   %ol
     -artist.artworks.each do |a|
       -if a.image

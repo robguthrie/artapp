@@ -1,14 +1,12 @@
 - title "#{@artwork.name} by #{@artwork.artist.name}" 
-
+#artwork
+  = image_tag @artwork.image.thumb('800x800').url if @artwork.image
 %p
   %strong Name:
   = @artwork.name
 %p
   %strong Description:
   = @artwork.description
-%p
-  %strong Image:
-  = image_tag @artwork.image.thumb('800x800').url if @artwork.image
 %p
   %strong Dimensions
   = @artwork.dimensions

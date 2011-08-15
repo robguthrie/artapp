@@ -16,7 +16,7 @@ gem 'haml-rails'
 gem 'rack-cache', :require => 'rack/cache'
 gem 'dragonfly', '~>0.9.4'
 gem 'devise'
-
+gem 'rails_autolink'
 group :development do
   gem "nifty-generators"
   gem 'sqlite3-ruby', :require => 'sqlite3'
