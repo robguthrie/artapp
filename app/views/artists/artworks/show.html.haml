@@ -28,6 +28,6 @@
 %p
   = link_to "Edit", edit_artists_artwork_path(@artwork)
   |
-  = link_to "Destroy", @artwork, :confirm => 'Are you sure?', :method => :delete
+  = link_to "Destroy", artists_artwork_path(@artwork), :confirm => 'Are you sure?', :method => :delete
   |
   = link_to "View All", artworks_path
