@@ -9,4 +9,6 @@
       %td= artist.name
       %td= truncate(artist.description)
       %td= link_to 'Show', admin_artist_path(artist)
+      %td= link_to "Destroy", [:admin, artist], :confirm => 'Are you sure?', :method => :delete
+
 
