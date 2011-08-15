@@ -9,5 +9,5 @@ Artapp::Application.routes.draw do
   end
   resources :artworks, :only => [:index, :show]
   resource :artist, :only => [:show]
-  root :to => 'home#index'
+  root :to => 'artworks#index'
 end

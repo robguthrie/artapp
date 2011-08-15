@@ -16,7 +16,6 @@
 
 
 %p
-  prev
-  |
-  next
+  = link_to "Previous", artwork_path(@artwork.prev)
   = link_to "View All", artworks_path
+  = link_to "Next", artwork_path(@artwork.next)
