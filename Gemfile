@@ -27,9 +27,6 @@ end
 
 group :development, :test do
   gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i  
-  gem 'guard-rspec'  
-
-
   gem 'turn', :require => false
   gem 'mongrel', '1.2.0.pre2'
   gem "rspec-rails", ">= 2.6.0.rc2"

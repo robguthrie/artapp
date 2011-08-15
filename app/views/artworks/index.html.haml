@@ -1,16 +1,15 @@
-- title "Artworks"
+- title "Unrecognised"
 
-%table
-  %tr
-    %th Artist Name
-    %th Artwork Name
-    %th Description
-    %th link
-  - for artwork in @artworks
-    %tr
-      %td= artwork.artist.name
-      %td= artwork.name
-      %td= artwork.description
-      %td= link_to 'Show', artwork
+%p intro paragraph
+%p Artists: #{link_to('register here', new_artist_registration_path)}
+
+-@artists.each do |artist|
+  %h2=artist.name
+  %p=simple_format artist.description
+  %ol
+    -artist.artworks.each do |a|
+      -if a.image
+        %li
+          =link_to(image_tag(a.image.thumb('100x100>').url), a)
 
 

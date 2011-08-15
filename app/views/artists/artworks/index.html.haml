@@ -1,0 +1,16 @@
+- title "Artworks"
+
+%table
+  %tr
+    %th Artist Name
+    %th Artwork Name
+    %th Description
+    %th link
+  - for artwork in @artworks
+    %tr
+      %td= artwork.artist.name
+      %td= artwork.name
+      %td= artwork.description
+      %td= link_to 'Show', artwork
+
+

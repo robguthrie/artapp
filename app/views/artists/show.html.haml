@@ -19,4 +19,4 @@
   %ul
     - @artist.artworks.each do |a|
       %li=link_to(a.name, a)
-%p= link_to "Add artwork", new_artwork_path
+%p= link_to "Add artwork", new_artists_artwork_path

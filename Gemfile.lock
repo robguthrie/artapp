@@ -113,10 +113,6 @@ GEM
       i18n (~> 0.4)
     ffi (1.0.9)
     gem_plugin (0.2.3)
-    guard (0.5.1)
-      thor (~> 0.14.6)
-    guard-rspec (0.4.0)
-      guard (>= 0.4.0)
     haml (3.1.2)
     haml-rails (0.3.4)
       actionpack (~> 3.0)
@@ -233,7 +229,6 @@ DEPENDENCIES
   dragonfly (~> 0.9.4)
   faker
   formtastic!
-  guard-rspec
   haml-rails
   hpricot
   inherited_resources (>= 1.1.2)

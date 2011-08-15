@@ -13,7 +13,9 @@
   %body
     #container
       #user_links{:style => 'float: right'}
+        =link_to("gallery", artworks_path)
         - if artist_signed_in?
+          =link_to("submit artwork", artist_path)
           =link_to("Sign out", destroy_artist_session_path, :method => :delete)
         - else
           =link_to("Sign up", new_artist_registration_path)

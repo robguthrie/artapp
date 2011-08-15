@@ -8,26 +8,17 @@
   = @artwork.description
 %p
   %strong Image:
-  = image_tag @artwork.image.thumb('400x400>').url if @artwork.image
-%p
-  %strong Downloadable
-  = @artwork.downloadable.inspect
-%p
-  %strong Physical being delivered
-  = @artwork.physical_being_delivered.inspect
+  = image_tag @artwork.image.thumb('800x800').url if @artwork.image
 %p
   %strong Dimensions
   = @artwork.dimensions
 %p
-  %strong Physical included in auction?
-  = @artwork.auction_physical.inspect
-%p
   %strong Auction reserve price
   = @artwork.auction_reserve_price
 
+
 %p
-  = link_to "Edit", edit_artwork_path(@artwork)
+  prev
   |
-  = link_to "Destroy", @artwork, :confirm => 'Are you sure?', :method => :delete
-  |
+  next
   = link_to "View All", artworks_path
