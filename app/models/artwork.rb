@@ -4,10 +4,10 @@ class Artwork < ActiveRecord::Base
  validates_presence_of :artist, :name
 
  def next
-   Artwork.joins(:artist).where('artworks.id > ?', id).order('artists.name, artworks.id').first
+   Artwork.joins(:artist).where('artworks.id > ?', id).order('id').first
  end
 
  def prev
-   Artwork.joins(:artist).where('artworks.id < ?', id).order('artists.name, artworks.id').last
+   Artwork.joins(:artist).where('artworks.id < ?', id).order('id').last
  end
 end
