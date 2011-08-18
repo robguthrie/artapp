@@ -8,7 +8,7 @@
     %th link
   - for artwork in @artworks
     %tr
-      %td= artwork.artist.name
+      %td= artwork.artist.name if artwork.artist
       %td= artwork.name
       %td= artwork.description
       %td= link_to 'Show', admin_artwork_path(artwork)
