@@ -14,13 +14,16 @@ Artwork.blueprint do
   name { Faker::Name.name }
   description { Faker::Lorem.paragraphs }
   downloadable { true }
+  auction_physical {true}
+  auction_reserve_price {5.00}
   physical_being_delivered { true }
   delivering_to { "Wellington" }
 end
-# Add your blueprints here.
-#
-# e.g.
-#   Post.blueprint do
-#     title { "Post #{sn}" }
-#     body  { "Lorem ipsum..." }
-#   end
+
+
+Bidder.blueprint do
+  name {"john"}
+  email { Faker::Internet.email}
+  password {'password'}
+  password_confirmation {'password'}
+end

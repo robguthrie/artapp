@@ -10,9 +10,22 @@
 %p
   %strong Dimensions
   = @artwork.dimensions
-%p
-  %strong Auction reserve price
-  = @artwork.auction_reserve_price
+  
+-if @artwork.auction_physical
+  %p
+    %strong Auction reserve price
+    = @artwork.auction_reserve_price
+
+  -if @artwork.leading_bid
+    %p
+      %strong Leading Bid
+      = @artwork.leading_bid.amount
+  -else
+    %p No bids yet
+  %p
+    =link_to("Place bid", new_artwork_bid_path(@artwork))
+-else
+  %p this artwork is not in the auction
 
 
 %p

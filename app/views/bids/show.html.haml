@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @bid.user_id
+%p
+  %b Artwork:
+  = @bid.artwork_id
+%p
+  %b Amount:
+  = @bid.amount
+
+= link_to 'Edit', edit_bid_path(@bid)
+\|
+= link_to 'Back', bids_path

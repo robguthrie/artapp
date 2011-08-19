@@ -9,6 +9,6 @@
     -artist.artworks.each do |a|
       -if a.image
         %li
-          =link_to(image_tag(a.image.thumb('100x100>').url), a)
+          =link_to(image_tag(a.image.thumb('100x100>').url), a, :id => "artwork_#{a.id}")
 
 

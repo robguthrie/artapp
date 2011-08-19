@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110815075358) do
+ActiveRecord::Schema.define(:version => 20110819090340) do
 
   create_table "artists", :force => true do |t|
     t.string   "email",                                 :default => "",   :null => false
@@ -49,6 +49,34 @@ ActiveRecord::Schema.define(:version => 20110815075358) do
     t.boolean  "auction_physical"
     t.float    "auction_reserve_price"
     t.text     "dimensions"
+  end
+
+  create_table "bidders", :force => true do |t|
+    t.string   "name"
+    t.string   "phone"
+    t.string   "email",                                 :default => "", :null => false
+    t.string   "encrypted_password",     :limit => 128, :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",                         :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "bidders", ["email"], :name => "index_bidders_on_email", :unique => true
+  add_index "bidders", ["reset_password_token"], :name => "index_bidders_on_reset_password_token", :unique => true
+
+  create_table "bids", :force => true do |t|
+    t.integer  "bidder_id"
+    t.integer  "artwork_id"
+    t.float    "amount"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

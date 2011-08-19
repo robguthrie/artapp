@@ -25,3 +25,6 @@ RSpec.configure do |config|
   # instead of true.
   config.use_transactional_fixtures = true
 end
+RSpec.configure do |config|
+  config.render_views
+end
