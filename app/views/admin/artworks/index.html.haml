@@ -3,6 +3,7 @@
 %table
   %tr
     %th Artist Name
+    %th Artwork id
     %th Artwork Name
     %th Description
     %th Downloadable
@@ -15,6 +16,7 @@
   - for artwork in @artworks
     %tr
       %td= artwork.artist.name if artwork.artist
+      %td= artwork.id
       %td= artwork.name
       %td= artwork.description
       %td= artwork.downloadable.inspect
