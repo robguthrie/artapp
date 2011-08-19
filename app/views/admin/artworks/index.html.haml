@@ -5,12 +5,24 @@
     %th Artist Name
     %th Artwork Name
     %th Description
+    %th Downloadable
+    %th physical?
+    %th being auctioned?
+    %th reserve
+    %th dimensions
     %th link
+    %th image dl
   - for artwork in @artworks
     %tr
       %td= artwork.artist.name if artwork.artist
       %td= artwork.name
       %td= artwork.description
+      %td= artwork.downloadable.inspect
+      %td= artwork.physical_being_delivered.inspect
+      %td= artwork.auction_physical.inspect
+
+      %td= artwork.auction_reserve_price.inspect
+      %td= artwork.dimensions
       %td= link_to 'Show', admin_artwork_path(artwork)
       %td= link_to 'Original Image', artwork.image.url if artwork.image
 
