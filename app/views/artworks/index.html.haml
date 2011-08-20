@@ -1,6 +1,22 @@
 - title "Unrecognised"
 
-%p Artists: #{link_to('register here', new_artist_registration_path)}
+%p Welcome to the Online Auction!
+
+%p To place a bid just click "Place bid" on the artwork page, you will be asked to signup, then you can enter your bid.
+
+%p On monday night we will have automatic email notifications to let you know if you have been out bid.
+
+%p Please note that the final sale is between the bidder and the seller of the work. If you are lucky enough to win one of the works, we will pass on your contact details to the Artist who will contact you to arrange the sale.
+
+%p Artists reserve the right for their work to be pick-up from Wellington only. This information will be posted under the individual listings shortly. 
+
+%p While we have done our best to ensure the information on this page is correct, please be advised that any pricing errors can be mediated at the end of the auction with the seller.
+
+%p If you have any urgent queries in regard to the auction you can email concernedsubmissions@gmail.com
+%p 
+  %strong Auction closes: 8pm Sunday 28th August 2011
+
+%p Artists can update their submission information by clicking "artists sign in"
 
 -@artists.each do |artist|
   %h2=artist.name
