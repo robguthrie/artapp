@@ -28,7 +28,7 @@
           %br
           -if a.auction_physical 
             -if a.leading_bid
-              bid: #{a.leading_bid.amount}
+              bid: $#{a.leading_bid.amount}
             -else
               no bids
 
