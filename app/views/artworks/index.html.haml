@@ -25,5 +25,18 @@
       -if a.image
         %li
           =link_to(image_tag(a.image.thumb('100x100>').url), a, :id => "artwork_#{a.id}")
+          %br
+          -if a.auction_physical 
+            -if a.leading_bid
+              bid: #{a.leading_bid.amount}
+            -else
+              no bids
+
+            -if a.auction_reserve_price
+              res: $#{a.auction_reserve_price}
+            -else
+              no reserve
+          
+          
 
 
