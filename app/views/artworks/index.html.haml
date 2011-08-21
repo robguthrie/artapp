@@ -16,6 +16,7 @@
 
 %p Artists can update their submission information by clicking "artists sign in"
 
+%p Total raised so far: $#{@total_raised} from #{@total_bids} bids
 -@artists.each do |artist|
   %h2=artist.name
   %p=simple_format auto_link artist.description
