@@ -1,0 +1,23 @@
+%p#notice= notice
+
+%p
+  %b Bidder:
+  = @bid.bidder.name
+  ,
+  = @bid.bidder.email
+  ,
+  = @bid.bidder.phone
+%p
+  %b Artwork:
+  = @bid.artwork_id
+  = @bid.artwork.name
+  by
+  = @bid.artwork.artist.name
+  = link_to(image_tag(@bid.artwork.image.thumb('100x100').url), @bid.artwork)
+%p
+  %b Amount:
+  = @bid.amount
+
+= link_to 'Edit', edit_admin_bid_path(@bid)
+\|
+= link_to 'Back', admin_bids_path

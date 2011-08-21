@@ -1,4 +1,8 @@
 - title "#{@artwork.name} by #{@artwork.artist.name}" 
+%p
+  = link_to "Previous", artwork_path(@artwork.prev)
+  = link_to "View All", artworks_path
+  = link_to "Next", artwork_path(@artwork.next)
 #artwork
   = image_tag @artwork.image.thumb('800x800').url if @artwork.image
 %p
@@ -24,6 +28,7 @@
     %p No bids yet
   %p
     =link_to("Place bid", new_artwork_bid_path(@artwork))
+    (Yes! Go on, please. Place your bid now! It's easy, and a little bit thrilling!)
 -else
   %p this artwork is not in the auction
 

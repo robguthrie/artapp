@@ -9,6 +9,7 @@ Artapp::Application.routes.draw do
     resources :artworks
   end
   namespace :admin do
+    resources :bids
     resources :artworks, :except => [:new, :create]
     resources :artists
   end
