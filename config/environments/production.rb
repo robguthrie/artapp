@@ -54,9 +54,8 @@ Artapp::Application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     :address              => "dinotech.co.nz",
-    :port                 => 25
-  }
-
+    :port                 => 25,
+    :enable_starttls_auto => false  }
   # Send deprecation notices to registered listeners
   config.action_mailer.raise_delivery_errors = true
   config.active_support.deprecation = :notify
