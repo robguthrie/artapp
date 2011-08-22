@@ -1,5 +1,5 @@
 class BidderMailer < ActionMailer::Base
-  default from: "system@concernedcitizens.co.nz"
+  default :from => "system@concernedcitizens.co.nz"
 
   def out_bid_notification(bid)
     @bid = bid
