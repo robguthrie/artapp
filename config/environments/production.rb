@@ -40,7 +40,7 @@ Artapp::Application.configure do
   # config.assets.precompile += %w( search.js )
 
   # Disable delivery errors, bad email addresses will be ignored
-  # config.action_mailer.raise_delivery_errors = false
+  #config.action_mailer.raise_delivery_errors = false
 
   # Enable threaded mode
   # config.threadsafe!
@@ -51,4 +51,16 @@ Artapp::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address              => "dinotech.co.nz",
+    :port                 => 25
+  }
+
+  # Send deprecation notices to registered listeners
+  config.action_mailer.raise_delivery_errors = true
+  config.active_support.deprecation = :notify
+  config.action_mailer.default_url_options = {
+    :host => 'unrecognised.concernedcitizens.co.nz'
+  }
 end

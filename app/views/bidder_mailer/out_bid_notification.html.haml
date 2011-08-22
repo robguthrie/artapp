@@ -1,0 +1,12 @@
+Dear #{@bidder.name}
+
+You no longer lead the bidding on #{@artwork.name} by #{@artist.name}
+
+The leading bid is now #{@bid.amount}
+
+To review the artwork and place a new bid visit:
+#{link_to(artwork_path(@artwork), artwork_path(@artwork))}
+
+You will not be notified again unless you place a new bid.
+
+Thank you for your support.

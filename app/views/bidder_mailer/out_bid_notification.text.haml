@@ -1,0 +1,12 @@
+%p Dear #{@bidder.email}
+
+%p You no longer lead the bidding on #{@artwork.name} by #{@artist.name}
+
+%p The leading bid is now #{@bid.amount}
+
+%p To review the artwork and place a new bid visit:
+#{link_to(artwork_path(@artwork), artwork_path(@artwork))}
+
+%p You will not be notified again unless you place a new bid.
+
+%p Thank you for your support.

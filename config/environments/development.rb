@@ -17,6 +17,10 @@ Artapp::Application.configure do
   config.action_mailer.raise_delivery_errors = false
 
   # Print deprecation notices to the Rails logger
+  config.action_mailer.smtp_settings = {
+    :address              => "localhost",
+    :port                 => 1025
+  }
   config.active_support.deprecation = :log
 
   # Only use best-standards-support built into browsers
