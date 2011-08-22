@@ -9,7 +9,7 @@ class BidsController < ApplicationController
     @bid.artwork = @artwork
     @bid.bidder = current_bidder
     if @artwork.leading_bid and @artwork.leading_bid.amount < @bid.amount and @artwork.leading_bid.bidder != @bid.bidder
-      BidderMailer.out_bid_notification(@bid).deliver!
+      BidderMailer.out_bid_notification(@artwork.leading_bid).deliver!
     end
     create!
   end
