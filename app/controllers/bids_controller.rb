@@ -6,7 +6,7 @@ class BidsController < ApplicationController
   def create
     if Time.now > Chronic.parse("8 pm")
       flash[:error] = "Bidding has closed now."
-      redirect_to :root_path
+      redirect_to root_path
     else
       build_resource
       @bid.amount = params[:bid][:amount]
