@@ -4,10 +4,10 @@ class BidsController < ApplicationController
   belongs_to :artwork
   actions :new, :create
   def create
-    #if Time.now > Chronic.parse("8 pm")
-      #flash[:error] = "Bidding has closed now."
-      #redirect_to :root_path
-    #else
+    if Time.now > Chronic.parse("8 pm")
+      flash[:error] = "Bidding has closed now."
+      redirect_to :root_path
+    else
       build_resource
       @bid.amount = params[:bid][:amount]
       @bid.artwork = @artwork
@@ -16,6 +16,6 @@ class BidsController < ApplicationController
         BidderMailer.out_bid_notification(@artwork.leading_bid).deliver!
       end
       create!
-    #end
+    end
   end
 end
