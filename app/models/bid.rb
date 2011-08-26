@@ -8,7 +8,6 @@ class Bid < ActiveRecord::Base
 
   private
   def amount_is_greater_than_reserve
-    puts amount
     if artwork.auction_reserve_price and (artwork.auction_reserve_price > amount)
       errors[:amount] = 'is less that the reserve'
     end
