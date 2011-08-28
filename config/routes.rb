@@ -15,6 +15,7 @@ Artapp::Application.routes.draw do
     resources :artworks
   end
   namespace :admin do
+    resources :bidders, :only => [:index]
     resources :bids
     resources :artworks, :except => [:new, :create] do
       post :email_winner, :on => :member
