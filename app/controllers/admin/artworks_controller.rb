@@ -10,4 +10,16 @@ class Admin::ArtworksController < AdminController
     end
     index!
   end
+
+  def email_winner
+    unless resource.winner_emailed
+      BidderMailer.winner_email(resource).deliver
+      resource.winner_emailed = true
+      resource.save
+      flash[:notice] = "Emailed #{resource.leading_bid.bidder.email} about #{resource.name}"
+    else
+      flash[:error] = "Already Emailed winner"
+    end
+    redirect_to admin_artworks_path
+  end
 end

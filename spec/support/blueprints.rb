@@ -27,3 +27,7 @@ Bidder.blueprint do
   password {'password'}
   password_confirmation {'password'}
 end
+
+Bid.blueprint do
+  amount {10}
+end

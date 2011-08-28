@@ -1,4 +1,10 @@
 Artapp::Application.routes.draw do
+  get "bidders/index"
+
+  get "reports/new"
+
+  get "reports/create"
+
   devise_for :bidders do
 
   end
@@ -10,7 +16,9 @@ Artapp::Application.routes.draw do
   end
   namespace :admin do
     resources :bids
-    resources :artworks, :except => [:new, :create]
+    resources :artworks, :except => [:new, :create] do
+      post :email_winner, :on => :member
+    end
     resources :artists
   end
   resources :artworks, :only => [:index, :show] do

@@ -1,0 +1,11 @@
+%h1 Bidders
+%table
+  %tr
+    %th Name
+    %th Email
+    %th Phone
+  -for b in @bidders
+    %tr
+      %td= b.name
+      %td= b.email
+      %td= b.phone

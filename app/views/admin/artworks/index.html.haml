@@ -14,7 +14,12 @@
     %th dimensions
     %th link
     %th image dl
+    %th email winner
   - for artwork in @artworks
+    -if params[:sold] == 'true'
+      - next if artwork.leading_bid.nil?
+    -elsif params[:sold] == 'false'
+      - next if !artwork.leading_bid.nil?
     %tr
       %td= artwork.artist.name if artwork.artist
       %td= artwork.id
@@ -29,5 +34,6 @@
       %td= artwork.dimensions
       %td= link_to 'Show', admin_artwork_path(artwork)
       %td= link_to 'Original Image', artwork.image.url if artwork.image
+      %td= link_to 'Email winner', email_winner_admin_artwork_path(artwork), :method => :post if artwork.leading_bid and !artwork.winner_emailed
 
 
