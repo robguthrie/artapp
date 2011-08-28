@@ -9,12 +9,14 @@ describe Admin::ArtworksController do
     @artwork = Artwork.make!
     @bidder = Bidder.make!
     @bid = Bid.make!(:bidder => @bidder, :artwork => @artwork)
+    puts @bid.inspect
+    puts @bid.valid?.inspect
     post :email_winner, :id => @artwork.id
     puts response.methods - Object.methods
     puts response.body
     response.should be_redirect
     last_email.to.should include @bidder.email
-    last_email.body.should =~ @artwork.artist.name
-    last_email.body.should =~ @artwork.name
+    last_email.body.should =~ /#{@artwork.artist.name}/
+    last_email.body.should =~ /#{@artwork.name}/
   end
 end

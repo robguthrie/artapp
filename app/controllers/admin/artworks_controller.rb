@@ -12,6 +12,7 @@ class Admin::ArtworksController < AdminController
   end
 
   def email_winner
+    puts "res: #{resource.inspect}"
     unless resource.winner_emailed
       BidderMailer.winner_email(resource).deliver
       resource.winner_emailed = true
