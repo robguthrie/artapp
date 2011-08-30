@@ -13,8 +13,7 @@ class Artwork < ActiveRecord::Base
  end
 
  def leading_bid 
-   #bids.where('created_at <= ?', DateTime.parse("2011-08-26 20:00:00 NZST")).order('amount desc').first
-   bids.order('amount desc').first
+   bids.where('created_at <= ?', Chronic.parse("2011-08-26 8pm")).order('amount desc').first
  end
 
 end
