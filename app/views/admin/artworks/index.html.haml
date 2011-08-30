@@ -3,6 +3,7 @@
 %table
   %tr
     %th Artist Name
+    %th Artist Email
     %th Artwork id
     %th Artwork Name
     %th Description
@@ -11,6 +12,7 @@
     %th being auctioned?
     %th reserve
     %th leading bid
+    %th view bids
     %th dimensions
     %th link
     %th image dl
@@ -20,8 +22,10 @@
       - next if artwork.leading_bid.nil?
     -elsif params[:sold] == 'false'
       - next if !artwork.leading_bid.nil?
+      - next if !artwork.auction_physical
     %tr
       %td= artwork.artist.name if artwork.artist
+      %td= artwork.artist.email if artwork.artist
       %td= artwork.id
       %td= artwork.name
       %td= artwork.description
