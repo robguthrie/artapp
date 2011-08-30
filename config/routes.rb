@@ -18,6 +18,7 @@ Artapp::Application.routes.draw do
     resources :bidders, :only => [:index]
     resources :bids
     resources :artworks, :except => [:new, :create] do
+      resources :bids
       post :email_winner, :on => :member
     end
     resources :artists

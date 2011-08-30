@@ -31,6 +31,7 @@
 
       %td= artwork.auction_reserve_price.inspect
       %td= link_to(artwork.leading_bid.amount, admin_bid_path(artwork.leading_bid)) if artwork.leading_bid
+      %td= link_to "view bids", admin_artwork_bids_path(artwork))
       %td= artwork.dimensions
       %td= link_to 'Show', admin_artwork_path(artwork)
       %td= link_to 'Original Image', artwork.image.url if artwork.image
