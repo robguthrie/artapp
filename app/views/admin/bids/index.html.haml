@@ -1,4 +1,4 @@
-%h1 Listing bids
+%h1 Listing bids at #{DateTime.now.to_s}
 
 %table
   %tr
@@ -16,6 +16,7 @@
       %td= bid.artwork_id
       %td= link_to(image_tag(bid.artwork.image.thumb('100x100').url), bid.artwork)
       %td= bid.amount
+      %td= bid.created_at
       %td= link_to 'Show', admin_bid_path(bid)
       %td= link_to 'Destroy', admin_bid_path(bid), :confirm => 'Are you sure?', :method => :delete
 
