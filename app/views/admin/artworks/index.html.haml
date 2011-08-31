@@ -12,6 +12,7 @@
     %th being auctioned?
     %th reserve
     %th leading bid
+    %th leading bid email
     %th view bids
     %th dimensions
     %th link
@@ -35,6 +36,7 @@
 
       %td= artwork.auction_reserve_price.inspect
       %td= link_to(artwork.leading_bid.amount, admin_bid_path(artwork.leading_bid)) if artwork.leading_bid
+      %td= artwork.leading_bid.bidder.email if artwork.leading_bid
       %td= link_to "view bids", admin_artwork_bids_path(artwork)
       %td= artwork.dimensions
       %td= link_to 'Show', admin_artwork_path(artwork)
