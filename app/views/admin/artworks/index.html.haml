@@ -22,7 +22,7 @@
       - next if artwork.leading_bid.nil?
     -elsif params[:sold] == 'false'
       - next if !artwork.leading_bid.nil?
-      - next if artwork.physical_being_delivered
+      - next if !artwork.physical_being_delivered
     %tr
       %td= artwork.artist.name if artwork.artist
       %td= artwork.artist.email if artwork.artist
