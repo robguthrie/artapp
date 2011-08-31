@@ -6,7 +6,6 @@
     %th Artist Email
     %th Artwork id
     %th Artwork Name
-    %th Description
     %th Downloadable
     %th physical?
     %th being auctioned?
@@ -29,11 +28,9 @@
       %td= artwork.artist.email if artwork.artist
       %td= artwork.id
       %td= artwork.name
-      %td= artwork.description
       %td= artwork.downloadable.inspect
       %td= artwork.physical_being_delivered.inspect
       %td= artwork.auction_physical.inspect
-
       %td= artwork.auction_reserve_price.inspect
       %td= link_to(artwork.leading_bid.amount, admin_bid_path(artwork.leading_bid)) if artwork.leading_bid
       %td= artwork.leading_bid.bidder.email if artwork.leading_bid
